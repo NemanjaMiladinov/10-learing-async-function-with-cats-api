@@ -1,0 +1,360 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Abel", sans-serif;
+}
+.container {
+  max-width: 60%;
+  margin: 0 auto;
+  z-index: 10000;
+}
+.header {
+  height: 100vh;
+}
+.nav {
+  background-color: #fcd897;
+  height: 60px;
+  position: relative;
+  z-index: 10;
+}
+.flex {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  padding: 0.5rem;
+  text-align: center;
+  flex-direction: column;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+.cat-breed {
+  color: royalblue;
+  position: relative;
+}
+.expand {
+  position: absolute;
+  transform: rotate(180deg);
+}
+.cats-breeds {
+  background-color: #fcd897;
+  position: absolute;
+  width: 300px;
+  height: min-content;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  top: 70px;
+  /* border-radius: 10px; */
+}
+.cat-breeds-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.274);
+}
+.first-20-breeds {
+  display: flex;
+  flex-direction: column;
+}
+.second-20-breeds {
+  display: flex;
+  flex-direction: column;
+}
+.cat-link {
+  padding: 0.225rem;
+  color: royalblue;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.cat-link:active {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.849);
+}
+.cat-link:hover {
+  text-decoration: underline;
+}
+
+.cat {
+  padding: 0.7rem;
+  margin: 2rem;
+  max-width: 450px;
+  background-color: white;
+  box-shadow: 0px 0px 42px -7px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* position: absolute; */
+  /* left: 50%; */
+  /* transform: translate(-50%); */
+}
+.cat-img-box {
+  width: 100%;
+  height: 300px;
+  border: 4px solid white;
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+}
+.cat-img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 10px 10px;
+  /* background-position: bottom; */
+  position: relative;
+}
+
+.cat-information {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.mtb {
+  margin: 0.7rem 0 0.7rem 0;
+}
+.mtb-0 {
+  margin: 0.3rem 0 0.3rem 0;
+}
+.mb-0 {
+  margin-bottom: 0.35rem;
+}
+.mb-1 {
+  margin-bottom: 0.7rem;
+}
+.font-style {
+  font-weight: bold;
+}
+.btn {
+  width: 100%;
+  height: 44px;
+  font-size: 1.1rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid tomato;
+  transition: all 0.1s;
+  background-color: tomato;
+  text-transform: uppercase;
+  color: white;
+}
+.btn:hover {
+  background-color: rgb(255, 76, 44);
+  -webkit-box-shadow: 0px 0px 31px -15px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 31px -15px rgba(0, 0, 0, 1);
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+.progress-bar {
+  height: 20px;
+  width: 100%;
+  /* background-color: steelblue; */
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.cat-details__info {
+  display: flex;
+  align-items: center;
+}
+.cat-details__name {
+  display: inline;
+}
+.cat-details__number {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  position: relative;
+  z-index: 1;
+  color: white;
+  transition: transform 1s;
+}
+.cat-details__number::after {
+  position: absolute;
+  content: "";
+  background-color: royalblue;
+  width: 30px;
+  height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 50%;
+}
+.liked-cat-animation {
+  box-sizing: border-box;
+  position: absolute;
+  /* padding: 0.5rem; */
+  background-color: red;
+  right: 0;
+  width: 350px;
+}
+.liked-cats {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  z-index: 2;
+  display: flex;
+  padding: 0.5rem;
+
+  /* height: 200px; */
+  flex-direction: column;
+
+  /* overflow: auto; */
+}
+.liked-cat__parrent {
+  position: relative;
+  display: flex;
+  /* align-items: center; */
+  padding: 0.5rem 0 0.5rem 0;
+  flex-direction: row;
+}
+.favorite-cat-name {
+  cursor: default;
+  font-weight: normal;
+}
+.liked-cats__img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+.delete-favorite {
+  font-size: 2rem;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  color: white;
+  transition: color 0.25s ease-in-out;
+  cursor: pointer;
+}
+.delete-favorite:hover {
+  color: red;
+}
+/* MODAL PICTURE */
+.modal-picture {
+  /* background-color: black; */
+  /* width: 70vw; */
+  max-height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  /* position: relative; */
+  display: none;
+}
+.modal-picture img {
+  width: 100%;
+  height: 90vh;
+  object-fit: contain;
+}
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.486);
+  backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: none;
+  z-index: 100;
+}
+.close-modal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: red;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.open-image {
+  position: absolute;
+  font-size: 2rem;
+  color: white;
+  z-index: 100;
+  border-radius: 50%;
+  /* right: 0; */
+  top: 50%;
+  left: 30%;
+  transform: translateY(-50%);
+  padding: 0.5rem;
+  display: none;
+}
+.open-image:hover {
+  background-color: black;
+}
+.like {
+  /* dispplay like when user hover over element */
+  position: absolute;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  font-size: 2rem;
+  color: white;
+  top: 50%;
+  right: 30%;
+  /* display: none; */
+  z-index: 100;
+  padding: 0.5rem;
+  display: none;
+}
+.like:hover {
+  background-color: black;
+}
+.hidden {
+  display: none;
+}
+.message {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+.cat-talking-no-like {
+  position: absolute;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 74%,
+    31% 75%,
+    22% 97%,
+    12% 75%,
+    0% 75%
+  );
+  background-color: rgba(41, 41, 41, 0.863);
+  width: 150px;
+  height: 120px;
+  left: 320px;
+  top: 80px;
+  z-index: 100000000;
+  padding: 0.5rem;
+  text-align: center;
+}
+.cat-talking-no-like h3 {
+  color: white;
+}

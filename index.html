@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js" defer type="module"></script>
+    <title>Document</title>
+  </head>
+  <body class="bodyEl">
+    <!-- modals -->
+    <!-- <div class="cat-talking-no-like">
+      <h3>You didnt liked any of my friends ... :(</h3>
+    </div> -->
+    <div class="modal-overlay"></div>
+    <div class="cat-breeds-overlay hidden"></div>
+    <div class="modal-picture">
+      <span class="close-modal">CLOSE</span>
+      <img src="/assets/icons8-cat.gif" alt="cat image" />
+    </div>
+      <!-- liked cats element -->
+      <div class="liked-cats">
+        <div class="liked-cat-animation">
+
+          <!-- <div class="liked-cat__parrent">
+            <div class="img">
+              <img src="#" alt="liked cat image" class="liked-cats__img" />
+            </div>
+            <h1 class="liked-cats__name">Liked Cat Name</h1> 
+            <span class="material-symbols-outlined delete-favorite">
+            delete
+            </span>
+          </div>  -->
+        </div>
+      </div>
+      <!-- liked cat element end -->
+    <!-- modals end -->
+    <header class="header">
+      <nav class="nav">
+        <div class="container flex">
+          <a href="#" class="cat-breed"
+            >Cats Breeds<span class="material-symbols-outlined expand">
+              expand_less
+            </span></a
+          >
+          <div class="cats-breeds hidden">
+            <!-- <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a> -->
+          </div>
+          <div class="logo">
+            <h1 class="app-name">CATS</h1>
+            <h3 class="app-name">myaooo</h3>
+          </div>
+          <a href="#" class="cat-breed favorite">Favorite Cat
+            <span class="material-symbols-outlined expand expand-favorite">
+              expand_less
+            </span></a
+          >
+          </a>
+          
+        </div>
+      </nav>
+      <!-- navigation end !-->
+    
+      <div class="cat">
+        <div class="cat-img-box">
+          <span class="material-symbols-outlined open-image"> search </span>
+          <span class="material-symbols-outlined like">favorite</span>
+          <img src="/assets/icons8-cat.gif" alt="cat image" class="cat-img" />
+        </div>
+        <div class="cat-information mtb">
+          <span class="cat-information-name"
+            >Name&nbsp;<span class="font-style cat-name">"?"</span></span
+          >
+          <span class="cat-information-origin"
+            >Origin&nbsp;<span class="font-style origin">"?"</span></span
+          >
+        </div>
+        <div class="center mb-1">
+          <button class="btn btn-details">show details</button>
+        </div>
+
+        <div class="cat-details">
+          <div class="cat-details__info mb-0 hidden">
+            <h3 class="cat-details__name">Children friendly</h3>
+            <span class="cat-details__number children-friendly">5</span>
+          </div>
+          <div class="progress-bar mtb-0 hidden"></div>
+        </div>
+      </div>
+    </header>
+    
+  </body>
+</html>
+<!-- 
+children_friendly: 5
+family_friendly: 3
+general_health: 2
+grooming: 3
+​intelligence: 5
+​length: "12 to 16 inches"
+​max_life_expectancy: 15
+​max_weight: 10
+​min_life_expectancy: 9
+​min_weight: 6
+​name: "Abyssinian"
+​origin: "Southeast Asia"
+​other_pets_friendly: 5
+​playfulness: 5
+​shedding: 3 
+-->
+<!-- <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Family friendly</h3>
+          <span class="cat-details__number family-friendly">3</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">General health</h3>
+          <span class="cat-details__number general-health">2</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Grooming</h3>
+          <span class="cat-details__number grooming">3</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Intelligence</h3>
+          <span class="cat-details__number intelligence">2</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Max life expectancy</h3>
+          <span class="cat-details__number max-life">12</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Max weight</h3>
+          <span class="cat-details__number max-weight">12</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Meowing</h3>
+          <span class="cat-details__number meowing">12</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Min life expactacny</h3>
+          <span class="cat-details__number min-life">12</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Min weight</h3>
+          <span class="cat-details__number min-weight">6</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Other pets friendly</h3>
+          <span class="cat-details__number pets-friendly">5</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Playfulness</h3>
+          <span class="cat-details__number playfulness">5</span>
+        </div>
+        <div class="progress-bar mtb-0"></div>
+        <div class="cat-details__info mb-0">
+          <h3 class="cat-details__name">Shedding</h3>
+          <span class="cat-details__number shedding">3</span>
+        </div>
+        <div class="progress-bar"></div> -->
