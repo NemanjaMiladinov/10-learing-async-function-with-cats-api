@@ -1,3 +1,4 @@
+import { showDetailsAnimationIn } from "../animation/showDetailsAnimation.js";
 import { fullfilledRequest } from "../api/apiCall.js";
 import {
   createdElements,
@@ -82,9 +83,10 @@ const showDetails = () => {
       elements[1].remove();
       elements[2].remove();
       elements[elements.length - 1].remove();
+      showDetailsAnimationIn();
     } else {
       // createdElements = [];
-      parrentElement.style.display = "none";
+      // parrentElement.style.display = "none";
       showDetailsButton.textContent = "SHOW DETAILS";
       console.log("close details");
       click = true;

@@ -9,7 +9,7 @@ body {
   font-family: "Abel", sans-serif;
 }
 .container {
-  max-width: 60%;
+  max-width: 70%;
   margin: 0 auto;
   z-index: 10000;
 }
@@ -19,6 +19,7 @@ body {
 .nav {
   background-color: #fcd897;
   height: 60px;
+  width: 100%;
   position: relative;
   z-index: 10;
 }
@@ -58,7 +59,6 @@ body {
   justify-content: space-between;
   z-index: 1000;
   top: 70px;
-  /* border-radius: 10px; */
 }
 .cat-breeds-overlay {
   position: absolute;
@@ -90,19 +90,18 @@ body {
 .cat-link:hover {
   text-decoration: underline;
 }
-
 .cat {
   padding: 0.7rem;
-  margin: 2rem;
-  max-width: 450px;
+  width: 450px;
   background-color: white;
   box-shadow: 0px 0px 42px -7px rgba(0, 0, 0, 0.22);
   display: flex;
   flex-direction: column;
   position: relative;
-  /* position: absolute; */
-  /* left: 50%; */
-  /* transform: translate(-50%); */
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
 }
 .cat-img-box {
   width: 100%;
@@ -120,7 +119,6 @@ body {
   /* background-position: bottom; */
   position: relative;
 }
-
 .cat-information {
   font-size: 1.5rem;
   display: flex;
@@ -128,7 +126,6 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
 .mtb {
   margin: 0.7rem 0 0.7rem 0;
 }
@@ -173,7 +170,6 @@ body {
   border: 1px solid black;
   border-radius: 5px;
 }
-
 .cat-details__info {
   display: flex;
   align-items: center;
@@ -204,7 +200,6 @@ body {
 .liked-cat-animation {
   box-sizing: border-box;
   position: absolute;
-  /* padding: 0.5rem; */
   background-color: red;
   right: 0;
   width: 350px;
@@ -215,18 +210,12 @@ body {
   top: 60px;
   z-index: 2;
   display: flex;
-  padding: 0.5rem;
-
-  /* height: 200px; */
   flex-direction: column;
-
-  /* overflow: auto; */
 }
 .liked-cat__parrent {
   position: relative;
   display: flex;
-  /* align-items: center; */
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 0.5rem;
   flex-direction: row;
 }
 .favorite-cat-name {
@@ -253,20 +242,17 @@ body {
 }
 /* MODAL PICTURE */
 .modal-picture {
-  /* background-color: black; */
-  /* width: 70vw; */
   max-height: 100%;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-  /* position: relative; */
   display: none;
 }
 .modal-picture img {
   width: 100%;
-  height: 90vh;
+  height: 100%;
   object-fit: contain;
 }
 .modal-overlay {
@@ -291,39 +277,48 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+.close-modal:hover {
+  color: rgb(255, 152, 152);
+}
 .open-image {
   position: absolute;
   font-size: 2rem;
-  color: white;
+  color: tomato;
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.22);
   z-index: 100;
   border-radius: 50%;
   /* right: 0; */
-  top: 50%;
-  left: 30%;
+  top: 10px;
+  left: -10px;
   transform: translateY(-50%);
   padding: 0.5rem;
   display: none;
 }
 .open-image:hover {
-  background-color: black;
+  background-color: tomato;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.514);
 }
 .like {
-  /* dispplay like when user hover over element */
   position: absolute;
   border-radius: 50%;
   transform: translateY(-50%);
   right: 0;
   font-size: 2rem;
-  color: white;
-  top: 50%;
-  right: 30%;
-  /* display: none; */
+  color: tomato;
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.22);
+  top: 10px;
+  right: -10px;
   z-index: 100;
   padding: 0.5rem;
   display: none;
 }
 .like:hover {
-  background-color: black;
+  background-color: tomato;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.514);
 }
 .hidden {
   display: none;
@@ -357,4 +352,13 @@ body {
 }
 .cat-talking-no-like h3 {
   color: white;
+}
+/* responsive design */
+@media only screen and (max-width: 600px) {
+  .cat {
+    width: 350px;
+  }
+  .liked-cat-animation {
+    width: 100vw;
+  }
 }

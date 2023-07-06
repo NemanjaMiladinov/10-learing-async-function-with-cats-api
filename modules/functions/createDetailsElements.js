@@ -1,7 +1,9 @@
 // global export for show details button
 let createdElements = [];
 function createDetailsElements(recivedData) {
+  // clear createdElement array to not append duplicates
   clearCreatedElements();
+
   console.log("create details elements");
 
   // napraviti elementi koji su mi potrebni iz recived data
@@ -9,22 +11,26 @@ function createDetailsElements(recivedData) {
     console.log("data recived for creating elements");
     // kreirati cat-details__info element da bude roditelj(cat-details__info)
     const catDetailsInfo = document.createElement("div");
-    catDetailsInfo.classList.add("cat-details__info");
+    catDetailsInfo.classList.add("cat-details__info", "mb-0");
+
     // kreirati ime informacije koju zelim da prikazem(cat-details__name) h3
     const catDetailsName = document.createElement("h3");
     catDetailsName.classList.add("cat-details__name");
+
+    // fix string for class name
     const detailsNameStr = key.toLocaleLowerCase().replace("_", " ");
     const fixAnotation =
       detailsNameStr[0].toUpperCase() + detailsNameStr.slice(1);
     catDetailsName.appendChild(document.createTextNode(fixAnotation));
+
     // kreirati broj koji predstavlja vrednost informacije(cat-details__number) span
     const catDetailsNumber = document.createElement("span");
     catDetailsNumber.classList.add("cat-details__number");
     catDetailsNumber.appendChild(document.createTextNode(val));
+
     // append everything to parrent element
     catDetailsInfo.append(catDetailsName, catDetailsNumber);
     createdElements.push(catDetailsInfo);
-    // createdElements = [];
   }
 }
 /*

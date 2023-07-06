@@ -14,7 +14,7 @@ const favoriteCatElement = document.querySelector(".liked-cat-animation");
 const navigationHeight = document
   .querySelector(".nav")
   .getBoundingClientRect().height;
-console.log(navigationHeight);
+// console.log(navigationHeight);
 
 const defaultElementPosition = () => {
   // set top default position -
