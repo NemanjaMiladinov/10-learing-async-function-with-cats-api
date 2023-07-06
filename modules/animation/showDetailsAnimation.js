@@ -15,7 +15,7 @@ const keyframesOpt = {
 };
 
 const showDetailsAnimationIn = () => {
-  const elements = document.querySelectorAll(".cat-details__name");
+  const elements = document.querySelectorAll(".cat-details__info");
 
   elements.forEach((el, index) => {
     el.style.display = "none";
