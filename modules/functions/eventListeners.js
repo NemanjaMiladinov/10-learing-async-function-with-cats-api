@@ -85,8 +85,7 @@ const showDetails = () => {
       elements[elements.length - 1].remove();
       showDetailsAnimationIn();
     } else {
-      // createdElements = [];
-      // parrentElement.style.display = "none";
+      parrentElement.style.display = "none";
       showDetailsButton.textContent = "SHOW DETAILS";
       console.log("close details");
       click = true;
