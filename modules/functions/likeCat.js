@@ -3,6 +3,7 @@ import {
   slideInAnimation,
   slideOutAnimation,
 } from "../animation/animation.js";
+import { likeWarningSameCat } from "../modals/likeWarningSameCat.js";
 
 function likeCat(name, imageLink) {
   const likedCatsElement = document.querySelector(".liked-cat-animation");
@@ -20,7 +21,8 @@ function likeCat(name, imageLink) {
         existingElement.getAttribute("value") === "liked" &&
         existingElement.textContent === name
       ) {
-        console.log("You already liked that cat");
+        // if user like the same cat
+        likeWarningSameCat();
         return;
       }
     }

@@ -353,6 +353,25 @@ body {
 .cat-talking-no-like h3 {
   color: white;
 }
+.like-warning {
+  position: absolute;
+  width: 100%;
+  /* change this in js */
+  height: 50px;
+  background-color: rgb(255, 72, 72);
+  /* background-color: tomato; */
+  top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* change this in js */
+  display: none;
+}
+.like-warning h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 100;
+}
 /* responsive design */
 @media only screen and (max-width: 600px) {
   .cat {
