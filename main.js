@@ -1,5 +1,5 @@
 "use strcit";
-// import { favoriteCat, likeCat } from "./modules/functions/likeCat.js";
+
 import { favoriteCat } from "./modules/functions/likeCat.js";
 
 import {
@@ -12,7 +12,6 @@ import { openModal, removePointer } from "./modules/functions/openModal.js";
 import { createCatLinks } from "./modules/functions/createLinks.js";
 
 import { showHideCatsBreeds } from "./modules/functions/showHideCatBreeds.js";
-import { likeEvent } from "./modules/functions/likeFunctionality.js";
 
 catsOptionEvent();
 showDetails();
@@ -22,4 +21,3 @@ removePointer();
 createCatLinks();
 showHideCatsBreeds();
 favoriteCat();
-// likeEvent();

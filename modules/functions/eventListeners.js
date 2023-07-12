@@ -1,10 +1,14 @@
 import { showDetailsAnimationIn } from "../animation/showDetailsAnimation.js";
+
 import { fullfilledRequest } from "../api/apiCall.js";
+
 import {
   createdElements,
   getCreatedElements,
 } from "./createDetailsElements.js";
+
 let click = true;
+
 function catsOptionEvent() {
   const catsBreedsLinks = document.querySelector(".cats-breeds");
   const parrentElement = document.querySelector(".cat-details");
