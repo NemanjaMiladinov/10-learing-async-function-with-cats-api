@@ -1,6 +1,6 @@
 "use strcit";
-
-import { favoriteCat } from "./modules/functions/likeCat.js";
+// import for opening favorite cat element
+import { favoriteCat } from "./modules/functions/openFavoriteMenu.js";
 
 import {
   catsOptionEvent,
@@ -15,7 +15,6 @@ import { showHideCatsBreeds } from "./modules/functions/showHideCatBreeds.js";
 
 catsOptionEvent();
 showDetails();
-
 openModal();
 removePointer();
 createCatLinks();

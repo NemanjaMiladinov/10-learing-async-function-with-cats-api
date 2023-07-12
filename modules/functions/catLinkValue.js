@@ -1,3 +1,5 @@
+// this module is not used ... I let this here maybe will be usefull later ...
+
 function catLinkValue(targetLink) {
   console.log("add value to cats links");
   const catLinks = document.querySelectorAll(".cat-link");

@@ -1,7 +1,9 @@
 import { defaultElementPosition } from "../animation/animation.js";
 
 const likesState = [];
-
+const getLikedNames = () => {
+  return likesState;
+};
 const likeEvent = (apiData) => {
   console.log("like function executed");
 
@@ -37,7 +39,7 @@ const likeEvent = (apiData) => {
 
     // Dodaj parrent element u likedCatsElement
     likedCatsElement.appendChild(parrentElement);
-    likesState.push(catName);
+    likesState.push(catName.textContent);
     console.log(likesState);
 
     // important for animation to work
@@ -45,4 +47,4 @@ const likeEvent = (apiData) => {
   });
 };
 
-export { likeEvent };
+export { likeEvent, getLikedNames };

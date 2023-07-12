@@ -1,16 +1,10 @@
-import {
-  defaultElementPosition,
-  slideInAnimation,
-  slideOutAnimation,
-} from "../animation/animation.js";
+import { slideInAnimation, slideOutAnimation } from "../animation/animation.js";
 
 function favoriteCat() {
   let click = true;
 
   // favorite cat link reference
   const favoriteCatLink = document.querySelector(".favorite");
-
-  const likedCatsElements = document.querySelector(".liked-cat__parrent");
 
   // arrow reference
   const expandFavorite = document.querySelector(".expand-favorite");
