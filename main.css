@@ -200,9 +200,11 @@ body {
 .liked-cat-animation {
   box-sizing: border-box;
   position: absolute;
-  background-color: red;
+  /* background-color: red; */
+  background-color: #fcd897;
   right: 0;
   width: 350px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.158);
 }
 .liked-cats {
   position: absolute;

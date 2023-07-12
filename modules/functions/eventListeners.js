@@ -6,32 +6,33 @@ import {
 } from "./createDetailsElements.js";
 let click = true;
 function catsOptionEvent() {
-  // this query reference was used in previus version , now its not used anymore
-  // const catsOptionElement = document.querySelector("#cats-select");
   const catsBreedsLinks = document.querySelector(".cats-breeds");
   const parrentElement = document.querySelector(".cat-details");
+
   // #This event is responsible for api call
   catsBreedsLinks.addEventListener("click", async function (e) {
-    // console.log("select options event");
     // set target to be link text
     const selectVal = e.target.textContent;
-    // console.log(e.target);
 
     /* 
     await for this to be finished ,
     selectVal is a string for cat name
      */
+
     await fullfilledRequest(selectVal);
+
     /*
       ok, so I need to use await so the next
       line of code can wait for the promise
       to be fullfilled ...
     */
+
     /*
-      So when I click to change the cat name
+      So when I click to pick cat link
       click variable will become false
       and this if block its going to be executed ...
     */
+
     if (!click) {
       // clear the previus elements
       parrentElement.innerHTML = "";
@@ -75,8 +76,8 @@ const showDetails = () => {
         parrentElement.append(createdElements[i]);
       }
       // ...
-      console.log(createdElements);
-      console.log(catSelect);
+      // console.log(createdElements);
+      // console.log(catSelect);
       //remove some elements that are already shown(name,origin,length)
       const elements = document.querySelectorAll(".cat-details__info");
       elements[0].remove();

@@ -36,9 +36,10 @@ const slideInAnimation = () => {
 const slideOutAnimation = () => {
   // set top default position -
   const defaultPosition = favoriteCatElement.offsetHeight + navigationHeight;
+  const navHeight = "60";
   const slideOutAnimation = [
     { transform: `translateY(${defaultPosition}px)` },
-    { transform: `translateY(-${defaultPosition}px)` },
+    { transform: `translateY(-${navHeight}px)` },
   ];
   favoriteCatElement.animate(slideOutAnimation, slideTime);
 };

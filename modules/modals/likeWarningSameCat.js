@@ -1,5 +1,5 @@
 const likeWarningSameCat = () => {
-  console.log("you already liked that cat");
+  // console.log("you already liked that cat");
   /*
   Show warning for users that they alreadu
   liked the same cat ...

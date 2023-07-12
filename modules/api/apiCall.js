@@ -10,8 +10,13 @@ import {
   setCatOrigin,
   setCatImage,
 } from "../functions/functions.js";
-import { likeCat } from "../functions/likeCat.js";
+// ** LIKE EVENT ** //
+import { likeEvent } from "../functions/likeFunctionality.js";
+// import { likeCat } from "../functions/likeCat.js";
 import { removePointer } from "../functions/openModal.js";
+
+let recivedDataInfo = [];
+
 // # REQUEST API CALL
 const request = async function (catName) {
   const url = `https://api.api-ninjas.com/v1/cats?name=${catName}`;
@@ -59,8 +64,21 @@ const fullfilledRequest = async function (catName) {
     setCatImage(recivedData.image_link),
     createDetailsElements(recivedData),
   ]);
-
-  likeCat(recivedData.name, recivedData.image_link);
+  likeEvent(recivedData);
+  recivedDataInfo.push(recivedData);
 };
 
-export { request, fullfilledRequest };
+function getCurretnData() {
+  return recivedDataInfo;
+}
+function removeFirstData() {
+  recivedDataInfo.shift();
+}
+
+export {
+  request,
+  fullfilledRequest,
+  recivedDataInfo,
+  getCurretnData,
+  removeFirstData,
+};
