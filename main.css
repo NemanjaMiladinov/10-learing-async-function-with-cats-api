@@ -11,7 +11,7 @@ body {
 .container {
   max-width: 70%;
   margin: 0 auto;
-  z-index: 10000;
+  z-index: 10;
 }
 .header {
   height: 100vh;
@@ -210,7 +210,7 @@ body {
   position: absolute;
   right: 0;
   top: 60px;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   flex-direction: column;
 }
@@ -369,11 +369,13 @@ body {
   text-align: center;
   /* change this in js */
   display: none;
+  z-index: 100000000000000000;
 }
 .like-warning h1 {
   color: white;
   font-size: 2rem;
   font-weight: 100;
+  z-index: 100000000;
 }
 /* responsive design */
 @media only screen and (max-width: 600px) {

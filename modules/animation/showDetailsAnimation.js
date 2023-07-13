@@ -23,7 +23,7 @@ const showDetailsAnimationIn = () => {
 
     setTimeout(() => {
       el.style.display = "block";
-    }, index * 200);
+    }, index * 100);
   });
 };
 

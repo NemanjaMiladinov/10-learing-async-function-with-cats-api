@@ -20,7 +20,7 @@ const defaultElementPosition = () => {
   // set top default position -
   const defaultPosition = favoriteCatElement.offsetHeight + navigationHeight;
   favoriteCatElement.style.top = `-${defaultPosition}px`;
-  console.log(favoriteCatElement.offsetHeight);
+  // console.log(favoriteCatElement.offsetHeight);
 };
 
 const slideInAnimation = () => {

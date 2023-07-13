@@ -1,9 +1,36 @@
 import { defaultElementPosition } from "../animation/animation.js";
 
-const likesState = [];
+import { likeWarningSameCat } from "../modals/likeWarningSameCat.js";
+// array for controling liked elements
+let likesState = [];
+
+// function for array
 const getLikedNames = () => {
   return likesState;
 };
+/*
+  clear function used when user pick a different cat 
+  (when click on new link) , its important to clear
+  likesState so the checkIfTHereIs2likes can work
+  properly ...
+*/
+const clear = () => {
+  likesState = [];
+};
+
+function checkIfThereIs2Likes(button) {
+  for (let i = 0; i < likesState.length; i++) {
+    if (likesState.indexOf(likesState[i], i + 1) !== -1) {
+      console.log("true");
+      likeWarningSameCat();
+      button.style.display = "none";
+      setTimeout(() => {
+        button.style.display = "block";
+      }, 2000);
+    }
+  }
+}
+
 const likeEvent = (apiData) => {
   console.log("like function executed");
 
@@ -40,11 +67,13 @@ const likeEvent = (apiData) => {
     // Dodaj parrent element u likedCatsElement
     likedCatsElement.appendChild(parrentElement);
     likesState.push(catName.textContent);
-    console.log(likesState);
-
+    // console.log(likeState.log());
+    checkIfThereIs2Likes(like);
     // important for animation to work
     defaultElementPosition();
+    // dont work
+    // likeCheck();
   });
 };
 
-export { likeEvent, getLikedNames };
+export { likeEvent, getLikedNames, clear };
