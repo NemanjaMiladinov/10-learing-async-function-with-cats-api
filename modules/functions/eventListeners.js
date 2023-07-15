@@ -6,7 +6,7 @@ import {
   createdElements,
   getCreatedElements,
 } from "./createDetailsElements.js";
-import { clear } from "./likeFunctionality.js";
+import { clearLikes } from "./likeFunctionality.js";
 
 let click = true;
 
@@ -16,6 +16,7 @@ function catsOptionEvent() {
 
   // #This event is responsible for api call
   catsBreedsLinks.addEventListener("click", async function (e) {
+    clearLikes();
     // set target to be link text
     const selectVal = e.target.textContent;
     console.log("clicked on link");
@@ -33,7 +34,6 @@ function catsOptionEvent() {
       likedCats array can work properly to check
       if there is a duplicate in likedCats array ...
     */
-    clear();
     if (!click) {
       // clear the previus elements
       parrentElement.innerHTML = "";
