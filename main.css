@@ -388,6 +388,7 @@ body {
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.22);
   z-index: 1000000000;
+  display: none;
 }
 .button-wrapper {
   display: flex;
