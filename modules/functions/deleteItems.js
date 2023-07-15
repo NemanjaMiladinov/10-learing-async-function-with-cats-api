@@ -3,19 +3,17 @@ import { clearLikes } from "./likeFunctionality.js";
 const confirmDelete = async (element, modal) => {
   const btnConfirm = document.querySelector(".button-wrapper");
 
-  function clickHandler(event) {
-    if (event.target.textContent !== "no") {
-      console.log("remove item");
-      element.remove();
-      modal.style.display = "none";
-    } else {
-      console.log("dont remove item");
-      modal.style.display = "none";
-      return;
+  return new Promise((resolve, reject) => {
+    function clickHandler(event) {
+      if (event.target.textContent !== "no") {
+        console.log("remove item");
+        element.remove();
+        modal.style.display = "none";
+      } else {
+        console.log("dont remove item");
+        modal.style.display = "none";
+      }
     }
-  }
-
-  return new Promise(() => {
     btnConfirm.addEventListener("click", clickHandler);
   });
 };
