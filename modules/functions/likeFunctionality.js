@@ -1,4 +1,5 @@
 import { defaultElementPosition } from "../animation/animation.js";
+import { deleteItems } from "./deleteItems.js";
 
 import { likeCheck } from "./likeCheck.js";
 
@@ -40,7 +41,7 @@ const likeEvent = (apiData) => {
   const removeFavorite = document.createElement("span");
   removeFavorite.classList.add("material-symbols-outlined", "delete-favorite");
   removeFavorite.textContent = "delete";
-
+  deleteItems(removeFavorite);
   // event listener for liking cats
   like.addEventListener("click", function (e) {
     // Dodaj sve elemente u parrent element
