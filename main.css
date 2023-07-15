@@ -377,6 +377,41 @@ body {
   font-weight: 100;
   z-index: 100000000;
 }
+.confirm-delete-modal {
+  padding: 1rem;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  /* height: 100px; */
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.22);
+  z-index: 1000000000;
+}
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.btn-confirm {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.no:hover {
+  background-color: rgba(0, 128, 0, 0.664);
+}
+.yes:hover {
+  background-color: rgb(255, 99, 71);
+}
+.no {
+  background-color: green;
+  /* margin-right: 1rem; */
+}
+.yes {
+  background-color: rgba(255, 99, 71, 0.76);
+}
 /* responsive design */
 @media only screen and (max-width: 600px) {
   .cat {
