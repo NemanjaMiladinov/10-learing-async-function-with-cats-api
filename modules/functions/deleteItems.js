@@ -3,7 +3,7 @@ import { clearLikes } from "./likeFunctionality.js";
 const confirmDelete = async (element, modal) => {
   const btnConfirm = document.querySelector(".button-wrapper");
 
-  return new Promise((resolve, reject) => {
+  return new Promise(() => {
     function clickHandler(event) {
       if (event.target.textContent !== "no") {
         console.log("remove item");
@@ -31,7 +31,7 @@ const deleteItems = async (element) => {
       // show modal
       confirmDeleteModal.style.display = "block";
       // wait for delete confirm
-      await confirmDelete(deleteItem, confirmDeleteModal);
+      await confirmDelete(e.target.parentElement, confirmDeleteModal);
 
       // deleteItem.remove();
 
