@@ -12,7 +12,8 @@ import { openModal, removePointer } from "./modules/functions/openModal.js";
 import { createCatLinks } from "./modules/functions/createLinks.js";
 
 import { showHideCatsBreeds } from "./modules/functions/showHideCatBreeds.js";
-
+import { fireLikeEvent } from "./modules/functions/likeFunctionality.js";
+fireLikeEvent();
 catsOptionEvent();
 showDetails();
 openModal();

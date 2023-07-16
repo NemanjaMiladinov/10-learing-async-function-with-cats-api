@@ -6,7 +6,7 @@ import {
   createdElements,
   getCreatedElements,
 } from "./createDetailsElements.js";
-import { clearLikes } from "./likeFunctionality.js";
+// import { clearLikes } from "./likeFunctionality.js";
 
 let click = true;
 
@@ -16,24 +16,14 @@ function catsOptionEvent() {
 
   // #This event is responsible for api call
   catsBreedsLinks.addEventListener("click", async function (e) {
-    clearLikes();
+    console.log("clicked on link");
     // set target to be link text
     const selectVal = e.target.textContent;
-    console.log("clicked on link");
-    //select value is catName from apiCall.js module
+
+    //select value is link text content
     fullfilledRequest(selectVal);
 
-    /*
-      I cant descrive how this clear function
-      is important . This is for clearing
-      liked cats array state . 
-
-      So when you click on a different cat breed link
-      this F will execute and clear the array ,
-      so the function for cheking the indexOf from
-      likedCats array can work properly to check
-      if there is a duplicate in likedCats array ...
-    */
+    // clearLikes();
     if (!click) {
       // clear the previus elements
       parrentElement.innerHTML = "";

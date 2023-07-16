@@ -10,8 +10,9 @@ import {
   setCatOrigin,
   setCatImage,
 } from "../functions/functions.js";
+
 // ** LIKE EVENT ** //
-import { likeEvent } from "../functions/likeFunctionality.js";
+// import { clearLikes, likeEvent } from "../functions/likeFunctionality.js";
 // import { likeCat } from "../functions/likeCat.js";
 import { removePointer } from "../functions/openModal.js";
 
@@ -35,6 +36,7 @@ const request = async function (catName) {
         } else {
           resolve(response.json());
         }
+        return response;
       })
       .catch((error) => {
         throw new Error(error, "Something went wrong, catch error");
@@ -42,20 +44,24 @@ const request = async function (catName) {
   });
 };
 
-// # API CALL RECIVED
+// this function is fired when is clicked on link cats breeds
+
 const fullfilledRequest = async function (catName) {
+  console.log("cat breeds clicked");
   // ocistiti niz pre dodavanja novih elemenata
+  // okida se klikom na link
   clearCreatedElements();
 
   // dobijeni podaci iz api poziva
   const [recivedData] = await request(catName);
 
+  recivedDataInfo.push(recivedData);
   // neki error
   if (!catName) {
     return;
   }
 
-  // obrisi pointer kursos stil
+  // remove pointer se okida u main.js
   removePointer(recivedData.image_link);
 
   await Promise.all([
@@ -64,21 +70,10 @@ const fullfilledRequest = async function (catName) {
     setCatImage(recivedData.image_link),
     createDetailsElements(recivedData),
   ]);
-  likeEvent(recivedData);
-  recivedDataInfo.push(recivedData);
 };
 
-function getCurretnData() {
-  return recivedDataInfo;
-}
-function removeFirstData() {
-  recivedDataInfo.shift();
-}
-
-export {
-  request,
-  fullfilledRequest,
-  recivedDataInfo,
-  getCurretnData,
-  removeFirstData,
+const reciedDataState = () => {
+  return [...recivedDataInfo];
 };
+
+export { request, fullfilledRequest, reciedDataState };

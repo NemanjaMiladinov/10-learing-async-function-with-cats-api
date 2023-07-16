@@ -1,12 +1,12 @@
 import { likeWarningSameCat } from "../modals/likeWarningSameCat.js";
-import { getLikedNames } from "./likeFunctionality.js";
+import { clearLikes, getLikedNames } from "./likeFunctionality.js";
 
 const likeCheck = () => {
   console.log("checking is user like same cat 2 times...");
   /*
     Using index [i] variable in indexOf as a starting
     point from where elements inside index will
-    start "counting". 
+    start "counting".
 
     Because I am checking for duplicates , it need to start
     counting from [i + 1] ... If I need it to check only if
@@ -22,7 +22,7 @@ const likeCheck = () => {
       return;
     }
 
-    console.log(likes);
+    // console.log(likes);
   }
 };
 

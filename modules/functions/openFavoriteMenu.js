@@ -1,4 +1,5 @@
 import { slideInAnimation, slideOutAnimation } from "../animation/animation.js";
+// import { clearLikes } from "./likeFunctionality.js";
 
 function favoriteCat() {
   let click = true;
@@ -31,7 +32,7 @@ function favoriteCat() {
   // EVENT LISTENER ->
   favoriteCatLink.addEventListener("click", function (e) {
     // console.log("expand favorite cats");
-
+    // clearLikes();
     if (click === true) {
       // console.log("open favorite element");
       // slideIn();
