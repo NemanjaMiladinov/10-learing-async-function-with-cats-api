@@ -1,6 +1,4 @@
 import { defaultElementPosition } from "../animation/animation.js";
-import { clearLikes, getLikedNames } from "./likeFunctionality.js";
-// const deleteIcon = document.querySelector(".delete-favorite");
 
 const confirmDelete = async (element, modal) => {
   const btnConfirm = document.querySelector(".button-wrapper");
@@ -12,16 +10,17 @@ const confirmDelete = async (element, modal) => {
         element.remove();
         modal.style.display = "none";
         defaultElementPosition();
-        console.log(getLikedNames());
-        for (let i = 0; i < getLikedNames().length; i++) {
-          getLikedNames().splice(getLikedNames()[i], 1);
-          console.log(getLikedNames());
-        }
+        // console.log(getLikedNames());
+        // for (let i = 0; i < getLikedNames().length; i++) {
+        //   getLikedNames().splice(getLikedNames()[i], 1);
+        //   console.log(getLikedNames());
+        // }
         return;
       }
       if (event.target.textContent === "no") {
         console.log("dont remove item");
         modal.style.display = "none";
+        defaultElementPosition();
       }
     }
     btnConfirm.addEventListener("click", clickHandler);
@@ -43,7 +42,7 @@ const deleteItems = async (element) => {
       // wait for delete confirm
       await confirmDelete(deleteItem, confirmDeleteModal);
 
-      deleteItem.remove();
+      defaultElementPosition();
     });
   } else {
     return;
