@@ -13,6 +13,7 @@ import { createCatLinks } from "./modules/functions/createLinks.js";
 
 import { showHideCatsBreeds } from "./modules/functions/showHideCatBreeds.js";
 import { fireLikeEvent } from "./modules/functions/likeFunctionality.js";
+import { deleteItems } from "./modules/functions/deleteFavoriteCat.js";
 fireLikeEvent();
 catsOptionEvent();
 showDetails();
@@ -21,3 +22,4 @@ removePointer();
 createCatLinks();
 showHideCatsBreeds();
 favoriteCat();
+deleteItems();
