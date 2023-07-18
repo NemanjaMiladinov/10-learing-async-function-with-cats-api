@@ -1,7 +1,9 @@
 import { defaultElementPosition } from "../animation/animation.js";
-import { reciedDataState } from "../api/apiCall.js";
+
 import { likeWarningSameCat } from "../modals/likeWarningSameCat.js";
-import { deleteItems } from "./deleteItems.js";
+import { openDeleteModal } from "./openDeleteModal.js";
+import { likeCheck } from "./likeCheck.js";
+import { deleteItems } from "./deleteFavoriteCat.js";
 
 // like button reference
 const like = document.querySelector(".like");
@@ -35,28 +37,24 @@ like.addEventListener("click", function (e) {
   removeFavorite.classList.add("material-symbols-outlined", "delete-favorite");
   removeFavorite.textContent = "delete";
 
-  // Da li postoje duplikati ?
   /*
-    Kada zelim da nodelist prebacim u niz , koristim
-    Array.from() metodu . Ako zelim jos nesto 
-    da dobijem iz tog niza mogu da nastavim dalje sa .
-    i da koristim map i izvucem jos informacija iz niza ...
-  
+    if there is a cat with the name that already exist,
+    return true from this function , if true , return
+    to stop appending new elements ...
   */
-  const favoritesCatsNames = Array.from(
-    document.querySelectorAll(".favorite-cat-name")
-  ).map((element) => element.textContent);
 
-  if (favoritesCatsNames.includes(catName.textContent)) {
-    console.log("Postoji duplikat u imenima mačaka.");
-    likeWarningSameCat();
+  if (likeCheck(catName)) {
     return;
   }
+
+  /* if its not true , continue with appending ... */
 
   // Dodaj sve elemente u parrent element
   parrentElement.append(likedCatImage, catName, removeFavorite);
   likedCatsElement.append(parrentElement);
 
+  // removeFavorite is icon html element , event is atached to that element
+  openDeleteModal(removeFavorite);
   deleteItems(removeFavorite);
   defaultElementPosition();
 });
