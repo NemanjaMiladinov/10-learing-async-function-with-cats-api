@@ -1,6 +1,6 @@
 import { defaultElementPosition } from "../animation/animation.js";
 
-const deleteItems = (element) => {
+const deleteItems = (element, catName) => {
   const btnsConfirm = document.querySelectorAll(".btn-confirm");
   const deleteModal = document.querySelector(".confirm-delete-modal");
 
@@ -18,7 +18,15 @@ const deleteItems = (element) => {
           console.log("remove element");
           element.parentElement.remove();
           deleteModal.style.display = "none";
-          localStorage.removeItem("cat");
+
+          // Remove catName from local storage
+          let likedCats = JSON.parse(localStorage.getItem("likedCats")) || [];
+          const index = likedCats.indexOf(catName);
+          if (index !== -1) {
+            likedCats.splice(index, 1);
+            localStorage.setItem("likedCats", JSON.stringify(likedCats));
+          }
+
           defaultElementPosition();
           return;
         }

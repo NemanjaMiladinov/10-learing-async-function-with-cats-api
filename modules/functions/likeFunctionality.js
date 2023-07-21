@@ -63,7 +63,7 @@ like.addEventListener("click", function (e) {
 
   // removeFavorite is icon html element , event is atached to that element
   openDeleteModal(removeFavorite);
-  deleteItems(removeFavorite);
+  deleteItems(removeFavorite, catName.textContent);
   defaultElementPosition();
 });
 function fireLikeEvent() {
