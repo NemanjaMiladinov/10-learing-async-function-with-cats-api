@@ -18,6 +18,7 @@ const deleteItems = (element) => {
           console.log("remove element");
           element.parentElement.remove();
           deleteModal.style.display = "none";
+          localStorage.removeItem("cat");
           defaultElementPosition();
           return;
         }

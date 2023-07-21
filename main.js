@@ -23,3 +23,5 @@ createCatLinks();
 showHideCatsBreeds();
 favoriteCat();
 deleteItems();
+
+// localStorage.clear();

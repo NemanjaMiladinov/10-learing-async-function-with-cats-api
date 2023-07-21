@@ -5,11 +5,15 @@ import { openDeleteModal } from "./openDeleteModal.js";
 import { likeCheck } from "./likeCheck.js";
 import { deleteItems } from "./deleteFavoriteCat.js";
 
+let likedCats = [];
+
 // like button reference
 const like = document.querySelector(".like");
+
+// LIKE EVENT LISTENER
 like.addEventListener("click", function (e) {
   console.log("like function executed");
-
+  let likedCats = JSON.parse(localStorage.getItem("likedCats")) || [];
   // html elements
   const catNameEl = document.querySelector(".cat-name");
   const catNameImgEl = document.querySelector(".cat-img");
@@ -52,6 +56,10 @@ like.addEventListener("click", function (e) {
   // Dodaj sve elemente u parrent element
   parrentElement.append(likedCatImage, catName, removeFavorite);
   likedCatsElement.append(parrentElement);
+
+  // set local storage when liked , remove is going to be in deleteFavoriteCats.js
+  likedCats.push(catName.textContent);
+  localStorage.setItem("likedCats", JSON.stringify(likedCats));
 
   // removeFavorite is icon html element , event is atached to that element
   openDeleteModal(removeFavorite);
