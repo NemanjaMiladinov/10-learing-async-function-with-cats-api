@@ -24,4 +24,4 @@ showHideCatsBreeds();
 favoriteCat();
 deleteItems();
 
-// localStorage.clear();
+localStorage.clear();
